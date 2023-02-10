@@ -1,23 +1,32 @@
 import React from "react";
 
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
 
-function ContactCard({ name = "" }) {
+function ContactCard({ name = "", navigation }) {
   //   const name = prop.name;
   //   const {name} = prop;
 
   return (
-    <View style={styles.row}>
-      <View style={styles.textIcon}>
-        <Text style={styles.iconText}>{name[0].toUpperCase()}</Text>
-      </View>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate("ContactDetails")}
+    >
+      <View style={styles.row}>
+        <View style={styles.textIcon}>
+          <Text style={styles.iconText}>{name[0].toUpperCase()}</Text>
+        </View>
 
-      <Text style={[, styles.text, { color: "white" }]}>{name}</Text>
-    </View>
+        <Text style={[, styles.text, { color: "white" }]}>{name}</Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "teal",
+    flex: 1,
+  },
   row: {
     flexDirection: "row",
     alignItems: "center",

@@ -9,7 +9,11 @@ function ContactCard({ name = "", navigation }) {
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => navigation.navigate("ContactDetails")}
+      onPress={() =>
+        navigation.navigate("ContactDetails", {
+          name,
+        })
+      }
     >
       <View style={styles.row}>
         <View style={styles.textIcon}>

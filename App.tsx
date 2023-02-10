@@ -19,6 +19,7 @@ export default function App() {
         <Stack.Screen
           name="Contacts"
           component={Home}
+          
           options={{
             headerShown: true,
           }}
